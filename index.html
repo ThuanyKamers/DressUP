@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="icones/favicon.png">
+    <title>Dress Up!</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <a href="index.html" class="logo">
+            <img src="logo.png" alt="Logo da Loja">
+        </a>
+        <nav class="nav-links">
+            <a href="guia-medidas/guia.html">Guia de Medidas</a>
+            <a href="sobrenos/sobre.html">Sobre Nós</a>
+        </nav>
+        <div class="user-options">
+            <a href="#login">Login</a>
+            <a href="carrinho.html">Carrinho</a>
+        </div>
+    </header>
+
+    <!-- Carrossel de Banner -->
+    <section class="banner-carousel">
+        <div class="carousel-wrapper">
+            <div class="carousel-slides" id="banner-slides">
+                <img src="imagens/carousel/banners/imagem1.png" alt="Banner 1">
+                <img src="imagens/carousel/banners/imagem2.png" alt="Banner 2">
+            </div>
+            <div class="banner-indicators">
+                <span class="indicator active" onclick="showBanner(0)"></span>
+                <span class="indicator" onclick="showBanner(1)"></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Carrossel de Produtos -->
+    <section class="product-carousel" id="product-carousel">
+        <h2>Mais Vendidos:</h2>
+        <div class="carousel-wrapper">
+            <div class="carousel-slides" id="product-slides">
+                <div class="product-row">
+                    <div class="product-item">
+                        <div class="image-container">
+                            <img src="imagens/carousel/camisas/computaria1.png" alt="Computaria"
+                                class="front-image">
+                            <img src="imagens/carousel/camisas/computaria2.png" alt="Computaria" class="back-image">
+                        </div>
+                        <h3>Computaria</h3>
+                        <p>R$79,90</p>
+                        <button class="secaobuy-btn" data-name="Computaria" data-price="R$79,90"
+                            data-image="imagens/carousel/camisas/computaria1.png">Comprar</button>
+                    </div>
+                    <div class="product-item">
+                        <div class="image-container">
+                            <img src="imagens/carousel/camisas/treinofofo1.png" alt="TreinoFofo"
+                                class="front-image">
+                            <img src="imagens/carousel/camisas/treinofofo2.png" alt="TreinoFofo" class="back-image">
+                        </div>
+                        <h3>Eu treino fofo</h3>
+                        <p>R$79,90</p>
+                        <button class="secaobuy-btn" data-name="Eu treino fofo" data-price="R$79,90"
+                            data-image="imagens/carousel/camisas/treinofofo1.png">Comprar</button>
+                    </div>
+                    <div class="product-item">
+                        <div class="image-container">
+                            <img src="imagens/carousel/camisas/breakingcode1.png" alt="Breaking Code"
+                                class="front-image">
+                            <img src="imagens/carousel/camisas/breakingcode2.png" alt="Breaking Code"
+                                class="back-image">
+                        </div>
+                        <h3>Breaking Code</h3>
+                        <p>R$79,90</p>
+                        <button class="secaobuy-btn" data-name="Breaking Code" data-price="R$79,90"
+                            data-image="imagens/carousel/camisas/breakingcode1.png">Comprar</button>
+                    </div>
+                    <div class="product-item">
+                        <div class="image-container">
+                            <img src="imagens/carousel/camisas/Garoto de Programa1.png" alt="Garoto de Programa" class="front-image">
+                            <img src="imagens/carousel/camisas/Garoto de Programa2.png" alt="Garoto de Programa" class="back-image">
+                        </div>
+                        <h3>Garoto de Programa</h3>
+                        <p>R$79,90</p>
+                        <button class="secaobuy-btn" data-name="Garoto de Programa" data-price="R$79,90"
+                            data-image="imagens/carousel/camisas/Garoto de Programa.png">Comprar</button>
+                    </div>
+                    <div class="product-item">
+                        <div class="image-container">
+                            <img src="imagens/carousel/camisas/esperar1.png" alt="Agora é só esperar" class="front-image">
+                            <img src="imagens/carousel/camisas/esperar2.png" alt="Agora é só esperar" class="back-image">
+                        </div>
+                        <h3>Agora é só esperar</h3>
+                        <p>R$79,90</p>
+                        <button class="secaobuy-btn" data-name="Agora é só esperar" data-price="R$79,90"
+                            data-image="imagens/carousel/camisas/esperar1.png">Comprar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="carousel-controls">
+            <button class="carousel-btn prev" onclick="prevProduct()">←</button>
+            <button class="carousel-btn next" onclick="nextProduct()">→</button>
+        </div>
+    </section>
+
+    <!-- Pop-up de Compra -->
+    <div id="popup-compra" class="popup hidden">
+        <div class="popup-content">
+            <span class="close" onclick="closePopup()">&times;</span>
+            <!-- Imagem da camisa -->
+            <img src="mais vendidos/imagens-roupas/roupa1.webp" alt="Gin OW T-shirt" class="popup-image">
+
+            <!-- Detalhes do produto -->
+            <div class="popup-details">
+                <h2>Boxy Navy</h2>
+                <p><b>R$219,90</b></p>
+
+                <!-- Seção de tamanhos -->
+                <div class="tamanho-options">
+                    <label>Tamanho: <span id="tamanho-selecionado" class="bold"></span></label><br>
+                    <button class="selected">P</button>
+                    <button>M</button>
+                    <button>G</button>
+                    <button>GG</button>
+                </div>
+
+                <!-- Quantidade e Botão de compra -->
+                <div class="qty-selector">
+                    <button>-</button>
+                    <input type="text" value="1">
+                    <button>+</button>
+                    <button class="compra-btn">Comprar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Faixa de Frete Grátis -->
+    <div class="marquee" id="marquee">
+        <div class="marquee-content">
+            <span>FRETE GRÁTIS A PARTIR DE R$190,90</span>
+            <span>FRETE GRÁTIS A PARTIR DE R$190,90</span>
+            <span>FRETE GRÁTIS A PARTIR DE R$190,90</span>
+            <span>FRETE GRÁTIS A PARTIR DE R$190,90</span>
+            <span>FRETE GRÁTIS A PARTIR DE R$190,90</span> <!-- Duplicar a frase -->
+            <span>FRETE GRÁTIS A PARTIR DE R$190,90</span> <!-- Duplicar a frase -->
+        </div>
+    </div>
+
+ <!-- Seção de Imagens em Grade -->
+<section class="image-grid">
+    <div class="image-item">
+        <img src="imagens/4 imagens/imagem1.png" alt="Imagem 1">
+    </div>
+    <div class="image-item">
+        <img src="imagens/4 imagens/imagem2.png" alt="Imagem 2">
+    </div>
+    <div class="image-item">
+        <img src="imagens/4 imagens/imagem3.png" alt="Imagem 3">
+    </div>
+    <div class="image-item">
+        <img src="imagens/4 imagens/imagem4.png" alt="Imagem 4">
+    </div>
+</section>
+
+    <!-- Seção de Roupas -->
+    <section class="product-secao" id="product-secao">
+        <h2>Para você:</h2>
+        <div class="secao-wrapper">
+            <div class="secao-slides" id="secao-slides">
+                <div class="secao-row">
+
+
+                    <!-- PRIMEIRA FILEIRA-->
+                    <div class="secao-item">
+                        <div class="secao-container">
+                            <img src="imagens/roupas/fazuely1.png" alt="Gin OW T-shirt" class="front-image-secao">
+                            <img src="imagens/roupas/fazuely2.png" alt="Gin OW T-shirt" class="back-image-secao">
+                        </div>
+                        <h3>Fazuely</h3>
+                        <p>R$79,90</p>
+                        <button class="secaobuy-btn" data-name="Fazuely" data-price="R$79,90"
+                            data-image="imagens/roupas/fazuely1.png">Comprar</button>
+                    </div>
+                    <div class="secao-item">
+                        <div class="secao-container">
+                            <img src="imagens/roupas/todes1.gif" alt="Gin OW T-shirt" class="front-image-secao">
+                            <img src="imagens/roupas/todes2.png" alt="Gin OW T-shirt" class="back-image-secao">
+                        </div>
+                        <h3>Todes</h3>
+                        <p>R$79,90</p>
+                        <button class="secaobuy-btn" data-name="Todes" data-price="R$79,90"
+                            data-image="imagens/roupas/todes1.gif">Comprar</button>
+                    </div>
+                    <div class="secao-item">
+                        <div class="secao-container">
+                            <img src="imagens/roupas/ads1.png" alt="Gin OW T-shirt" class="front-image-secao">
+                            <img src="imagens/roupas/ads2.png" alt="Gin OW T-shirt" class="back-image-secao">
+                        </div>
+                        <div class="golden-text">
+                            <h3>ADS (Limited Edition)</h3>
+                        </div>
+                        <p class="shiny-price">R$599,90</p>
+                        <button class="secaobuy-btn special-button" data-name="ADS (Limited Edition)" data-price="R$599,90"
+                                data-image="imagens/roupas/ads1.png">Comprar</button>
+                    </div>
+                    
+                    <div class="secao-item">
+                        <div class="secao-container">
+                            <img src="imagens/roupas/fisico1.png" alt="Gin OW T-shirt" class="front-image-secao">
+                            <img src="imagens/roupas/fisico2.png" alt="Gin OW T-shirt" class="back-image-secao">
+                        </div>
+                        <h3>Físico Turista</h3>
+                        <p>R$79,90</p>
+                        <button class="secaobuy-btn" data-name="Físico Turista" data-price="R$79,90"
+                            data-image="imagens/roupas/fisico1.png">Comprar</button>
+                    </div>
+                    <div class="secao-item">
+                        <div class="secao-container">
+                            <img src="imagens/roupas/lactose-intolerant.gif" alt="Gin OW T-shirt" class="front-image-secao">
+                            <img src="imagens/roupas/lactose-intolerant-2.gif" alt="Gin OW T-shirt" class="back-image-secao">
+                        </div>
+                        <h3>Lactose Intolerant</h3>
+                        <p>R$79,90</p>
+                        <button class="secaobuy-btn" data-name="Lactose Intolerant" data-price="R$79,90"
+                            data-image="imagens/roupas/lactose-intolerant.gif">Comprar</button> 
+                    </div>
+
+                    <!-- SEGUNDA FILEIRA-->
+                    <div class="secao-item">
+                        <div class="secao-container">
+                            <img src="imagens/roupas/eu-sou-timido-1.gif" alt="Gin OW T-shirt" class="front-image-secao">
+                            <img src="imagens/roupas/eu-sou-timido-2.gif" alt="Gin OW T-shirt" class="back-image-secao">
+                        </div>
+                        <h3>Eu sou Tímido</h3>
+                        <p>R$79,90</p>
+                        <button class="secaobuy-btn" data-name="Eu sou Tímido" data-price="R$79,90"
+                            data-image="imagens/roupas/eu-sou-timido-1.gif">Comprar</button>
+                    </div>
+                    <div class="secao-item">
+                        <div class="secao-container">
+                            <img src="imagens/roupas/cartaoclonado.png" alt="Gin OW T-shirt" class="front-image-secao">
+                            <img src="imagens/roupas/cartaoclonado.png" alt="Gin OW T-shirt" class="back-image-secao">
+                        </div>
+                        <h3>Aceita Cartão Clonado</h3>
+                        <p>R$79,90</p>
+                        <button class="secaobuy-btn" data-name="Aceita Cartão Clonado" data-price="R$79,90"
+                            data-image="imagens/roupas/cartaoclonado.png">Comprar</button>
+                    </div>
+                    <div class="secao-item">
+                        <div class="secao-container">
+                            <img src="imagens/roupas/bulma1.png" alt="Gin OW T-shirt" class="front-image-secao">
+                            <img src="imagens/roupas/bulma2.png" alt="Gin OW T-shirt" class="back-image-secao">
+                        </div>
+                        <h3>Eu treino fofo</h3>
+                        <p>R$79,90</p>
+                        <button class="secaobuy-btn" data-name="Eu treino fofo" data-price="R$79,90"
+                            data-image="imagens/roupas/bulma1.png">Comprar</button>
+                    </div>
+                    <div class="secao-item">
+                        <div class="secao-container">
+                            <img src="imagens/roupas/agulha1.png" alt="Gin OW T-shirt" class="front-image-secao">
+                            <img src="imagens/roupas/agulha2.png" alt="Gin OW T-shirt" class="back-image-secao">
+                        </div>
+                        <h3>Medo de Agulha</h3>
+                        <p>R$79,90</p>
+                        <button class="secaobuy-btn" data-name="Medo de Agulha" data-price="R$79,90"
+                            data-image="imagens/roupas/agulha1.png">Comprar</button>
+                    </div>
+                    <div class="secao-item">
+                        <div class="secao-container">
+                            <img src="imagens/roupas/chatgpt1.png" alt="Gin OW T-shirt" class="front-image-secao">
+                            <img src="imagens/roupas/chatgpt2.png" alt="Gin OW T-shirt" class="back-image-secao">
+                        </div>
+                        <h3>Usuário de ChatGPT</h3>
+                        <p>R$79,90</p>
+                        <button class="secaobuy-btn" data-name="Usuário de ChatGPT" data-price="R$79,90"
+                            data-image="imagens/roupas/chatgpt1.png">Comprar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="carousel-controls">
+            <button class="carousel-btn prev" onclick="prevProduct()">←</button>
+            <button class="carousel-btn next" onclick="nextProduct()">→</button>
+        </div>
+    </section>
+
+    <!-- ZAPPPPPPPPPPPPPPPPPPPPPP -->
+    <a href="https://wa.me/48984588412" class="whatsapp-icon" target="_blank" title="Suporte via WhatsApp">
+        <img src="icones/whatsapp-icon.png" alt="WhatsApp">
+    </a>
+
+    <!-- COOKIEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE-->
+    <div class="cookie-hidden">
+        <div class="cookieWrapper">
+            <img src="icones/cookie.png" alt="Cookie">
+            <div class="cookieContent">
+                <h2>Consentimento de Cookies</h2>
+                <p>Esse site usa cookies para coletar seus dados mais íntimos e lhe oferecer uma melhor experiência em
+                    nosso site!</p>
+                <div class="cookieButtons">
+                    <button class="cookieItem"><b>Aceitar e Fechar</b></button>
+                    <a href="https://orteil.dashnet.org/cookieclicker/" class="cookieItem">Saiba mais</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- COOKIEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE-->
+
+    <!-- MODAL DE LOGIN -->
+    <div id="login-modal" class="login-modal hidden">
+        <div class="login-modal-content">
+            <span class="login-close">&times;</span>
+            <div class="login-container">
+                <div class="login-tabs">
+                    <button class="tab-btn active" onclick="showTab('login')">Login</button>
+                    <button class="tab-btn" onclick="showTab('register')">Registrar</button>
+                </div>
+                
+                <!-- Formulário de Login -->
+                <div id="login-form" class="form-container active">
+                    <h2>Entrar na sua conta</h2>
+                    <form>
+                        <div class="input-group">
+                            <label for="login-email">Email:</label>
+                            <input type="email" id="login-email" name="email" required>
+                        </div>
+                        <div class="input-group">
+                            <label for="login-password">Senha:</label>
+                            <input type="password" id="login-password" name="password" required>
+                        </div>
+                        <button type="submit" class="login-btn">Entrar</button>
+                        <div class="login-options">
+                            <a href="#" onclick="showTab('forgot')">Esqueceu a senha?</a>
+                        </div>
+                    </form>
+                </div>
+                
+                <!-- Formulário de Registro -->
+                <div id="register-form" class="form-container">
+                    <h2>Criar nova conta</h2>
+                    <form>
+                        <div class="input-group">
+                            <label for="register-name">Nome completo:</label>
+                            <input type="text" id="register-name" name="name" required>
+                        </div>
+                        <div class="input-group">
+                            <label for="register-email">Email:</label>
+                            <input type="email" id="register-email" name="email" required>
+                        </div>
+                        <div class="input-group">
+                            <label for="register-password">Senha:</label>
+                            <input type="password" id="register-password" name="password" required>
+                        </div>
+                        <div class="input-group">
+                            <label for="register-confirm-password">Confirmar senha:</label>
+                            <input type="password" id="register-confirm-password" name="confirm-password" required>
+                        </div>
+                        <button type="submit" class="login-btn">Criar conta</button>
+                    </form>
+                </div>
+                
+                <!-- Formulário de Recuperação de Senha -->
+                <div id="forgot-form" class="form-container">
+                    <h2>Recuperar senha</h2>
+                    <p>Digite seu email para receber as instruções de recuperação:</p>
+                    <form>
+                        <div class="input-group">
+                            <label for="forgot-email">Email:</label>
+                            <input type="email" id="forgot-email" name="email" required>
+                        </div>
+                        <button type="submit" class="login-btn">Enviar instruções</button>
+                        <div class="login-options">
+                            <a href="#" onclick="showTab('login')">Voltar ao login</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- MODAL DE LOGIN -->
+
+    <!-- RODAPÉEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE -->
+
+    <footer>
+        <!-- Links de Navegação -->
+        <div class="rodape-links">
+            <div class="footer-section">
+                <ul>
+                    <li><a href="sobrenos/sobre.html">Sobre Nós</a></li>
+                    <li><a href="guia-medidas/guia.html">Guia de Medidas</a></li>
+                    <li><a href="termos-servico.html">Termos de Serviço</a></li>
+                    <li><a href="politica-privacidade.html">Política de Privacidade</a></li>
+                </ul>
+            </div>
+        </div>
+        <footer class="footer">
+            <div class="footer-container">
+                <!-- Informações de Contato -->
+                <div class="footer-section">
+                    <div class="contato-section">
+                        <h4>WhatsApp</h4>
+                        <p>(48) 1234-5678</p><br>
+                        <h4>Email</h4> suporte@dressup.com</p><br>
+                        <h4>Endereço</h4>
+                        <div class="endereco">
+                            <p>R. João Pereira dos Santos, 99 - Pte. do Imaruim, Palhoça - SC, 88130-475</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Redes Sociais -->
+                <div class="footer-section siga-nos">
+                    <h4>Siga-nos</h4>
+                    <a href="https://facebook.com"><img src="icones/FACEBOOK.jpg" alt="Facebook"></a>
+                    <a href="https://www.instagram.com/thuany.pk" target="_blank"><img src="icones/instagram.jpg" alt="Instagram"></a>
+                </div>
+                <!-- Métodos de Pagamento -->
+                <div class="footer-section metodos-pagamento">
+                    <h4>Métodos de Pagamento</h4>
+                    <img src="icones/paypal.png" alt="PayPal">
+                    <img src="icones/visa.webp" alt="Visa">
+                    <img src="icones/mastercard.webp" alt="MasterCard">
+                    <img src="icones/boleto.webp" alt="Boleto">
+                    <img src="icones/piquis.webp" alt="Pix">
+                </div>
+
+                <!-- Certificações e Selos de Segurança -->
+                <div class="footer-section seguranca">
+                    <h4>Segurança</h4>
+                    <img src="icones/crypt.png" alt="Site Seguro">
+                    <img src="icones/ssl.jpg" alt="SSL">
+                </div>
+            </div>
+        </footer>
+    </footer>
+
+    <!-- Informações Legais -->
+    <div class="footer-bottom">
+        <p>&copy; DRESS UP - 2024. Todos os direitos reservados.</p>
+    </div>
+
+    <!-- RODAPÉEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE -->
+
+    <script src="cookie-manager.js"></script>
+    <script src="scripts.js"></script>
+
+</body>
+
+</html>

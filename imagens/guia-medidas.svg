@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1100">
+  <!-- Silhueta da pessoa -->
+  <path d="M550,150 C550,150 550,150 550,150 C550,67.157 483.843,0 400,0 C316.157,0 250,67.157 250,150 C250,150 250,150 250,150 L250,200 C250,200 300,220 350,220 L450,220 C500,220 550,200 550,200 L550,150 Z M550,200 L550,300 C550,300 500,320 450,320 L350,320 C300,320 250,300 250,300 L250,200 M250,300 L250,400 C250,400 300,420 350,420 L450,420 C500,420 550,400 550,400 L550,300 M250,400 L250,500 C250,500 300,520 350,520 L450,520 C500,520 550,500 550,500 L550,400 M250,500 L250,600 C250,600 300,620 350,620 L450,620 C500,620 550,600 550,600 L550,500 M400,620 L400,800 M250,600 C250,600 250,600 250,600 C250,600 250,800 300,900 C350,1000 400,1050 400,1050 C400,1050 450,1000 500,900 C550,800 550,600 550,600 C550,600 550,600 550,600" fill="#001A57" stroke="none"/>
+  
+  <!-- Setas de medidas -->
+  <!-- Pescoço -->
+  <line x1="350" y1="180" x2="450" y2="180" stroke="#D81B60" stroke-width="5"/>
+  <polygon points="350,180 360,170 360,190" fill="#D81B60"/>
+  <polygon points="450,180 440,170 440,190" fill="#D81B60"/>
+  
+  <!-- Ombros -->
+  <line x1="250" y1="220" x2="550" y2="220" stroke="#D81B60" stroke-width="5"/>
+  <polygon points="250,220 260,210 260,230" fill="#D81B60"/>
+  <polygon points="550,220 540,210 540,230" fill="#D81B60"/>
+  
+  <!-- Busto -->
+  <line x1="250" y1="300" x2="550" y2="300" stroke="#D81B60" stroke-width="5"/>
+  <polygon points="250,300 260,290 260,310" fill="#D81B60"/>
+  <polygon points="550,300 540,290 540,310" fill="#D81B60"/>
+  
+  <!-- Cintura -->
+  <line x1="250" y1="400" x2="550" y2="400" stroke="#D81B60" stroke-width="5"/>
+  <polygon points="250,400 260,390 260,410" fill="#D81B60"/>
+  <polygon points="550,400 540,390 540,410" fill="#D81B60"/>
+  
+  <!-- Quadril -->
+  <line x1="250" y1="500" x2="550" y2="500" stroke="#D81B60" stroke-width="5"/>
+  <polygon points="250,500 260,490 260,510" fill="#D81B60"/>
+  <polygon points="550,500 540,490 540,510" fill="#D81B60"/>
+  
+  <!-- Coxa -->
+  <line x1="350" y1="600" x2="450" y2="600" stroke="#D81B60" stroke-width="5"/>
+  <polygon points="350,600 360,590 360,610" fill="#D81B60"/>
+  <polygon points="450,600 440,590 440,610" fill="#D81B60"/>
+  
+  <!-- Comprimento Perna -->
+  <line x1="400" y1="620" x2="400" y2="1050" stroke="#D81B60" stroke-width="5"/>
+  <polygon points="400,620 390,630 410,630" fill="#D81B60"/>
+  <polygon points="400,1050 390,1040 410,1040" fill="#D81B60"/>
+  
+  <!-- Comprimento Total -->
+  <line x1="150" y1="150" x2="150" y2="1050" stroke="#D81B60" stroke-width="5"/>
+  <polygon points="150,150 140,160 160,160" fill="#D81B60"/>
+  <polygon points="150,1050 140,1040 160,1040" fill="#D81B60"/>
+  
+  <!-- Textos -->
+  <text x="650" y="220" font-family="Arial" font-size="30" font-weight="bold" fill="#D81B60">OMBROS</text>
+  <text x="650" y="300" font-family="Arial" font-size="30" font-weight="bold" fill="#D81B60">BUSTO</text>
+  <text x="650" y="400" font-family="Arial" font-size="30" font-weight="bold" fill="#D81B60">CINTURA</text>
+  <text x="650" y="500" font-family="Arial" font-size="30" font-weight="bold" fill="#D81B60">QUADRIL</text>
+  <text x="650" y="600" font-family="Arial" font-size="30" font-weight="bold" fill="#D81B60">COXA</text>
+  <text x="150" y="600" font-family="Arial" font-size="30" font-weight="bold" fill="#D81B60" transform="rotate(90,150,600)">COMPRIMENTO PERNA</text>
+  <text x="50" y="600" font-family="Arial" font-size="30" font-weight="bold" fill="#D81B60" transform="rotate(90,50,600)">COMPRIMENTO TOTAL</text>
+</svg>
