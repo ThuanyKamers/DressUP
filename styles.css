@@ -429,6 +429,9 @@ header a:hover {
     transition: opacity 0.2s ease, transform 0.6s ease;
 }
 
+.front-image-secao {
+    opacity: 1;
+}
 
 .back-image-secao {
     opacity: 0;
