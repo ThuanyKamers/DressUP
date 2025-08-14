@@ -430,13 +430,13 @@ header a:hover {
 }
 
 .front-image-secao {
-    opacity: 1 !important;
-    z-index: 1;
+    opacity: 1;
+    z-index: 2;
 }
 
 .back-image-secao {
     opacity: 0;
-    z-index: 0;
+    z-index: 1;
 }
 
 .golden-text {
