@@ -444,6 +444,13 @@ header a:hover {
     z-index: 2;
 }
 
+/* Força a exibição da imagem ADS */
+.secao-item:nth-child(3) .front-image-secao {
+    opacity: 1 !important;
+    display: block !important;
+    z-index: 10 !important;
+}
+
 .secao-item:hover .front-image-secao {
     transform: scale(1.08);
 }
