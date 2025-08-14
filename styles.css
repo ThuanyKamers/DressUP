@@ -444,7 +444,7 @@ header a:hover {
     z-index: 2;
 }
 
-/* Força a exibição da imagem ADS */
+/* Força a exibição da imagem fmp */
 .secao-item:nth-child(3) .front-image-secao {
     opacity: 1 !important;
     display: block !important;
