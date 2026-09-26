@@ -6,8 +6,7 @@ A study project: the website of a **fictional** t-shirt store, built with plain 
 
 **Live site:** https://thuanykamers.github.io/DressUP/
 
-<!-- Screenshot: save the image as docs/screenshot.png and remove the comment around the next line -->
-<!-- ![DressUP screenshot](docs/screenshot.png) -->
+![DressUP screenshot](docs/screenshot.png)
 
 ## Features
 
